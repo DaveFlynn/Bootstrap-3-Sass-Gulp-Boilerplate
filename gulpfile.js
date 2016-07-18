@@ -18,6 +18,11 @@ gulp.task('js', function() {
 		.pipe(gulp.dest(dest + '/js'));
 });
 
+gulp.task('icons', function() { 
+	return gulp.src(config.bowerDir + '/fontawesome/fonts/**.*') 
+		.pipe(gulp.dest('./public/fonts')); 
+});
+
 gulp.task('css', function() {
 	return gulp.src('assets/styles/main.scss')
 		.pipe(sass().on('error', sass.logError))
