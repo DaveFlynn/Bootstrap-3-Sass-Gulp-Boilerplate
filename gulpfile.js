@@ -41,4 +41,11 @@ gulp.task('css', function() {
 		.pipe(gulp.dest(config.outputDir + '/css'));
 });
 
+gulp.task('watch', function(){
+	gulp.watch([config.stylesPath + '**/*.scss', config.stylesPath + '**/*.sass', config.stylesPath + '**/*.css'], ['css']);
+
+	gulp.watch([config.jsPath + '**/*.js'], ['js']);
+
+})
+
 gulp.task('default', ['js', 'css', 'icons']);
