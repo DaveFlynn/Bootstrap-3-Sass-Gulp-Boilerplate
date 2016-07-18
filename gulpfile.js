@@ -8,7 +8,7 @@ var dest = "public"
 
 var config = {
 	sassPath: './assets/styles',
-	jsPath: './assets/js',
+	jsPath: './assets/scripts',
 	bowerDir: './bower_components' 
 }
 
