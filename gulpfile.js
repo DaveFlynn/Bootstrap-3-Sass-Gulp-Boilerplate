@@ -1,31 +1,33 @@
 var gulp = require('gulp'),
 		sass = require ('gulp-sass'),
 		notify = require('gulp-notify'),
-		mainBowerFiles = require('main-bower-files');
-		filter = require('gulp-filter');
-
-var dest = "public";
+		mainBowerFiles = require('main-bower-files'),
+		filter = require('gulp-filter'),
+		autoprefixer = require('gulp-autoprefixer'),
+		concat = require('gulp-concat'),
+		uglify = require('gulp-uglify');
 
 var config = {
 	stylesPath: './assets/styles',
 	jsPath: './assets/scripts',
-	bowerDir: './bower_components' 
+	bowerDir: './bower_components' ,
+	outputDir: './public'
 }
 
 gulp.task('js', function() {
-	return gulp.src(mainBowerFiles())
+	return gulp.src(mainBowerFiles().concat(config.jsPath+'/*'))
 		.pipe(filter('**/*.js'))
-		.pipe(gulp.dest(dest + '/js'));
+		.pipe(concat('main.js'))
+		.pipe(uglify())
+		.pipe(gulp.dest(config.outputDir + '/js'));
 });
 
 gulp.task('icons', function() { 
 	return gulp.src(config.bowerDir + '/font-awesome/fonts/**.*') 
-		.pipe(gulp.dest('./public/fonts')); 
+		.pipe(gulp.dest(config.outputDir + '/fonts')); 
 });
 
 gulp.task('css', function() {
-	console.log(config.bowerDir + '/bootstrap-sass/assets/stylesheets'
-);
 	return gulp.src(config.stylesPath + '/main.scss')
 		.pipe(sass({
 				outputStyle: 'compressed',
@@ -35,7 +37,8 @@ gulp.task('css', function() {
 					config.bowerDir + '/font-awesome/scss'
 				]
 			}).on('error', sass.logError))
-		.pipe(gulp.dest(dest + '/css'));
-})
+		.pipe(autoprefixer())
+		.pipe(gulp.dest(config.outputDir + '/css'));
+});
 
 gulp.task('default', ['js', 'css', 'icons']);
