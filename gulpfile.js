@@ -4,10 +4,10 @@ var gulp = require('gulp'),
 		mainBowerFiles = require('main-bower-files');
 		filter = require('gulp-filter');
 
-var dest = "public"
+var dest = "public";
 
 var config = {
-	sassPath: './assets/styles',
+	stylesPath: './assets/styles',
 	jsPath: './assets/scripts',
 	bowerDir: './bower_components' 
 }
@@ -24,8 +24,17 @@ gulp.task('icons', function() { 
 });
 
 gulp.task('css', function() {
-	return gulp.src('assets/styles/main.scss')
-		.pipe(sass().on('error', sass.logError))
+	console.log(config.bowerDir + '/bootstrap-sass/assets/stylesheets'
+);
+	return gulp.src(config.stylesPath + '/main.scss')
+		.pipe(sass({
+				outputStyle: 'compressed',
+				includePaths: [
+					config.stylesPath,
+					config.bowerDir + '/bootstrap-sass/assets/stylesheets',
+					config.bowerDir + '/font-awesome/scss'
+				]
+			}).on('error', sass.logError))
 		.pipe(gulp.dest(dest + '/css'));
 })
 
