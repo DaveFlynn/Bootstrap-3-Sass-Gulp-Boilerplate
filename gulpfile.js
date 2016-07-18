@@ -19,7 +19,7 @@ gulp.task('js', function() {
 });
 
 gulp.task('icons', function() { 
-	return gulp.src(config.bowerDir + '/fontawesome/fonts/**.*') 
+	return gulp.src(config.bowerDir + '/font-awesome/fonts/**.*') 
 		.pipe(gulp.dest('./public/fonts')); 
 });
 
@@ -29,4 +29,4 @@ gulp.task('css', function() {
 		.pipe(gulp.dest(dest + '/css'));
 })
 
-gulp.task('default', ['js', 'css']);
+gulp.task('default', ['js', 'css', 'icons']);
