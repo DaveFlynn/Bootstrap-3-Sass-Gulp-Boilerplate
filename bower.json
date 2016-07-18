@@ -1,0 +1,21 @@
+{
+  "name": "bootstrap sass gulp boilerplate",
+  "authors": [
+    "Dave Flynn <analogue40@gmail.com>"
+  ],
+  "description": "Boilerplate for frontend projects based on Bootstrap",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass": "bootstrap-sass-official#^3.3.6"
+  }
+}
