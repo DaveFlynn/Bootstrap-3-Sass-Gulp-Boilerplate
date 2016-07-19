@@ -1,5 +1,5 @@
 {
-  "name": "bootstrap sass gulp boilerplate",
+  "name": "bootstrap-sass-gulp-boilerplate",
   "authors": [
     "Dave Flynn <analogue40@gmail.com>"
   ],
@@ -16,6 +16,7 @@
     "tests"
   ],
   "dependencies": {
+    "jquery": "2.2.4",
     "bootstrap-sass": "bootstrap-sass-official#^3.3.6",
     "font-awesome": "fontawesome#^4.6.3"
   }
