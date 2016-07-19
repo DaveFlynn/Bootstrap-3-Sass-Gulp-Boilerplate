@@ -8,10 +8,10 @@ var gulp = require('gulp'),
 		uglify = require('gulp-uglify');
 
 var config = {
-	stylesPath: './assets/styles',
-	jsPath: './assets/scripts',
-	bowerDir: './bower_components' ,
-	outputDir: './public'
+	stylesPath: 'assets/styles',
+	jsPath: 'assets/scripts',
+	bowerDir: 'bower_components' ,
+	outputDir: 'public'
 }
 
 gulp.task('js', function() {
