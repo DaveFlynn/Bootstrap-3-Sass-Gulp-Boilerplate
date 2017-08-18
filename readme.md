@@ -2,7 +2,7 @@
 
 A boilerplate for Bootstrap Sass and FontAwesome using Gulp, Bower and npm
 
-(For a Bootstrap 4 + Yarn version please see: https://github.com/DaveFlynn/Bootstrap-4-Sass-Yarn-Gulp-Boilerplate )
+For a Bootstrap 4 + Yarn version please see: https://github.com/DaveFlynn/Bootstrap-4-Sass-Yarn-Gulp-Boilerplate
 
 ## Installation
 
